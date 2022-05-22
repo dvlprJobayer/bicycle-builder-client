@@ -23,7 +23,9 @@ const SignUp = () => {
     }
 
     if (loading || updating) {
-        return <Loading />
+        return <div className='min-h-screen'>
+            <Loading></Loading>
+        </div>
     }
 
     return (

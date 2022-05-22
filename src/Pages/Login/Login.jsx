@@ -1,12 +1,30 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import Loading from '../../Components/Loading/Loading';
+import auth from '../../Firebase/firebase.init';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password)
+    }
+
+    if (loading) {
+        return <div className='min-h-screen'>
+            <Loading></Loading>
+        </div>
+    }
 
     return (
         <div className='lg:min-h-screen flex justify-center items-center'>
@@ -50,6 +68,7 @@ const Login = () => {
 
                         <input className='btn btn-primary w-full text-white mt-4' type="submit" value="Login" />
                     </form>
+                    {error && <p className='text-red-500 mt-1'>{error.message}</p>}
                     <p className='text-center mt-1'>Don't have an account? <Link to="/signup" className='text-primary cursor-pointer font-bold'>Create New Account</Link></p>
                     <SocialLogin />
                 </div>
