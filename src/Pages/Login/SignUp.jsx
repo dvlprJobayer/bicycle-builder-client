@@ -78,6 +78,7 @@ const SignUp = () => {
 
                         <input className='btn btn-primary w-full text-white mt-4' type="submit" value="SignUp" />
                     </form>
+                    {error && <p className='text-red-500 mt-1'>{error.message}</p>}
                     <p className='text-center mt-1'>Already have an account? <Link to="/login" className='text-primary cursor-pointer font-bold'>Login</Link></p>
                     <SocialLogin />
                 </div>
