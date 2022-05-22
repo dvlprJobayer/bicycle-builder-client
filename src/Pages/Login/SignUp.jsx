@@ -1,9 +1,18 @@
 import React from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import auth from '../../Firebase/firebase.init';
 import SocialLogin from './SocialLogin';
 
 const SignUp = () => {
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);

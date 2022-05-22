@@ -13,6 +13,7 @@ const SocialLogin = () => {
                 <div className="divider">OR</div>
             </div>
             <button onClick={() => signInWithGoogle()} className='btn btn-primary btn-outline'><FcGoogle className='mr-2 text-xl' /> Continue With Google</button>
+            {error && <p className='text-red-500 mt-1'>{error.message}</p>}
         </>
     );
 };
