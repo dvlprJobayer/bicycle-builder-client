@@ -12,7 +12,11 @@ const Navbar = ({ children }) => {
         <li><NavLink className="rounded-lg" to="/">Home</NavLink></li>
         {
             user ?
-                <button onClick={() => signOut(auth)} className='btn btn-primary btn-outline'>Logout</button> :
+                <>
+                    <li><NavLink className="rounded-lg" to="/dashboard">Dashboard</NavLink></li>
+                    <button onClick={() => signOut(auth)} className='btn btn-primary btn-outline'>Logout</button>
+                </>
+                :
                 <li><NavLink className="rounded-lg" to="/login">Login</NavLink></li>
         }
     </>

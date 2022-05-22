@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from './SocialLogin';
@@ -21,6 +22,20 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
     }
+
+    if (uError) {
+        toast.error('Name update failed');
+    }
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user, navigate, from]);
 
     if (loading || updating) {
         return <div className='min-h-screen'>

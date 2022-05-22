@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../Firebase/firebase.init';
 import SocialLogin from './SocialLogin';
@@ -19,6 +19,16 @@ const Login = () => {
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     }
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user, navigate, from]);
 
     if (loading) {
         return <div className='min-h-screen'>
