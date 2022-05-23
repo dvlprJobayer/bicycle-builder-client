@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Band Brake",
+        "img": "https://i.ibb.co/4MCRcb8/band-brake.jpg",
+        "description": "Original aluminum Brand Brake. We provide always best Band Brake. Get original quality Band Brake from us.",
+        "min": 100,
+        "available": 1000,
+        "price": 1.5
+    },
+    {
+        "name": "Bicycle Freewheel",
+        "img": "https://i.ibb.co/H2qtTFf/Bicycle-Freewheel.jpg",
+        "description": "Original quality Bicycle Freewheel. We provide always best Bicycle Freewheel. Get original Bicycle Freewheel from us.",
+        "min": 100,
+        "available": 1200,
+        "price": 2
+    },
+    {
+        "name": "Hycline bicycle freewheel",
+        "img": "https://i.ibb.co/n8bx2Bt/Hycline-bicycle-freewheel.jpg",
+        "description": "Original Gear Hycline Bicycle Freewheel. We provide always best Hycline Bicycle Freewheel. Get original Hycline Bicycle Freewheel from us.",
+        "min": 100,
+        "available": 1600,
+        "price": 2.5
+    }
+]

@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
     return (
@@ -15,9 +16,13 @@ function App() {
                 {
                     PublicRoutes.map(({ path, Component }, index) => <Route key={index} path={path} element={<Component />} />)
                 }
-                <Route path='/dashboard' element={<RequireAuth>
-                    <Dashboard />
-                </RequireAuth>}></Route>
+                <Route
+                    path='/dashboard'
+                    element={<RequireAuth>
+                        <Dashboard />
+                    </RequireAuth>}>
+                    <Route index element={<MyProfile />} />
+                </Route>
             </Routes>
             <Footer />
             <ToastContainer />
