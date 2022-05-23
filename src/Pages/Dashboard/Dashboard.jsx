@@ -9,14 +9,14 @@ const Dashboard = () => {
                 <div className="drawer-content mt-2">
                     {/* <!-- Page content here --> */}
                     <div className='text-center mb-4 lg:hidden'>
-                        <label for="my-drawer-2" className="btn btn-primary drawer-button">Dashboard Menu</label>
+                        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button">Dashboard Menu</label>
                     </div>
 
                     <Outlet />
 
                 </div>
                 <div className="drawer-side">
-                    <label for="my-drawer-2" className="drawer-overlay"></label>
+                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li><NavLink to="/dashboard">My Profile</NavLink></li>
