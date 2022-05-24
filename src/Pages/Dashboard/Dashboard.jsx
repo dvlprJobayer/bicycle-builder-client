@@ -29,7 +29,10 @@ const Dashboard = () => {
                         <li><NavLink to="/dashboard/my-orders">My Orders</NavLink></li>
                         <li><NavLink to="/dashboard/add-review">Add Review</NavLink></li>
                         {
-                            admin && <li><NavLink to="/dashboard/users">All User</NavLink></li>
+                            admin && <>
+                                <li><NavLink to="/dashboard/users">All User</NavLink></li>
+                                <li><NavLink to="/dashboard/add-product">Add Product</NavLink></li>
+                            </>
                         }
                     </ul>
 

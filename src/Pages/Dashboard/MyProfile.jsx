@@ -40,7 +40,6 @@ const MyProfile = () => {
             body: formData
         }).then(res => res.json()).then(result => {
             const img = result.data.url;
-            console.log(img);
             if (result.success) {
                 axiosBicycle.put(`/user?email=${user.email}`, {
                     name,
