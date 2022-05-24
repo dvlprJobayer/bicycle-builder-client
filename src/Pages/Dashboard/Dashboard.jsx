@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
+import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
+
+    const admin = useAdmin();
 
     const location = useLocation();
 
@@ -25,7 +28,9 @@ const Dashboard = () => {
                         <li><Link className={location.pathname === '/dashboard' ? 'active' : undefined} to="/dashboard">My Profile</Link></li>
                         <li><NavLink to="/dashboard/my-orders">My Orders</NavLink></li>
                         <li><NavLink to="/dashboard/add-review">Add Review</NavLink></li>
-                        <li><NavLink to="/dashboard/users">All User</NavLink></li>
+                        {
+                            admin && <li><NavLink to="/dashboard/users">All User</NavLink></li>
+                        }
                     </ul>
 
                 </div>
