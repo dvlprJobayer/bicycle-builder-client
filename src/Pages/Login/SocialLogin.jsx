@@ -4,6 +4,8 @@ import auth from '../../Firebase/firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../Components/Loading/Loading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
+import axiosBicycle from '../../api/axiosBicycle';
 
 const SocialLogin = () => {
 
@@ -13,11 +15,21 @@ const SocialLogin = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    const [token] = useToken(user);
+
+    if (user) {
+        axiosBicycle.put(`/user?email=${user.user.email}`, {
+            name: user.user.displayName
+        }).then(res => {
+            console.log(res.data);
+        })
+    }
+
     useEffect(() => {
-        if (user) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, navigate, from]);
+    }, [token, navigate, from]);
 
     if (loading) {
         return <div className='min-h-screen'>

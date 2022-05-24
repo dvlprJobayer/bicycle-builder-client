@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Users from './Pages/Dashboard/Admin/Users';
 
 function App() {
     return (
@@ -16,12 +17,9 @@ function App() {
                 {
                     PublicRoutes.map(({ path, Component }, index) => <Route key={index} path={path} element={<Component />} />)
                 }
-                <Route
-                    path='/dashboard'
-                    element={<RequireAuth>
-                        <Dashboard />
-                    </RequireAuth>}>
-                    <Route index element={<MyProfile />} />
+                <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+                    <Route index element={<RequireAuth><MyProfile /></RequireAuth>} />
+                    <Route path='users' element={<RequireAuth><Users /></RequireAuth>} />
                 </Route>
             </Routes>
             <Footer />

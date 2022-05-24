@@ -9,7 +9,7 @@ const SingleParts = ({ part }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title text-primary">{name}</h2>
-                <p>{description}</p>
+                <p title={description}>{description.slice(0, 50)}...</p>
                 <p className='font-semibold text-primary'>Minimum Order Quantity: {min}</p>
                 <p className='font-semibold text-primary'>Available Quantity: {available}</p>
                 <p className='font-semibold text-primary'>Per unit price: ${price}</p>

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../Firebase/firebase.init';
+import useToken from '../../hooks/useToken';
 import SocialLogin from './SocialLogin';
 
 const Login = () => {
@@ -24,11 +25,13 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    const [token] = useToken(user);
+
     useEffect(() => {
-        if (user) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user, navigate, from]);
+    }, [token, navigate, from]);
 
     if (loading) {
         return <div className='min-h-screen'>

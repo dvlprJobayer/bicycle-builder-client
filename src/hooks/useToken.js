@@ -3,18 +3,18 @@ import axiosBicycle from "../api/axiosBicycle";
 
 const useToken = user => {
     const [token, setToken] = useState('');
+    const email = user?.user?.email;
     useEffect(() => {
-        if (user) {
-            axiosBicycle.post('/user', {
-                email: user.user.email,
-                role: 'admin'
-            });
-            axiosBicycle('/get-token').then(res => {
+        if (email) {
+            axiosBicycle(`/get-token?email=${email}`).then(res => {
                 localStorage.setItem('accessToken', res.data.accessToken);
                 setToken(res.data.accessToken);
             });
+            axiosBicycle.put(`/user?email=${email}`, {
+                email
+            });
         }
-    }, [user]);
+    }, [email]);
     return [token];
 }
 

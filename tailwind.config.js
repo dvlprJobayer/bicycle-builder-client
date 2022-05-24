@@ -11,8 +11,8 @@ module.exports = {
         cupcake: {
           primary: "#446084",
           secondary: "#f6d860",
-          accent: "#3d4451",
-          neutral: "#37cdbe",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
           "base-100": "#ffffff",
         },
       },

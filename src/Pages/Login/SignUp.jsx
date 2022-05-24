@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axiosBicycle from '../../api/axiosBicycle';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../Firebase/firebase.init';
 import useToken from '../../hooks/useToken';
@@ -22,6 +23,9 @@ const SignUp = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
+        await axiosBicycle.put(`/user?email=${data.email}`, {
+            name: data.name
+        })
     }
 
     if (uError) {
