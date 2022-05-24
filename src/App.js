@@ -6,10 +6,10 @@ import { PublicRoutes } from './Routes/PublicRoutes/PublicRoutes';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import RequireAuth from './Pages/Login/RequireAuth';
+import RequireAuth from './Authentication/RequireAuth';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Admin/Users';
-import RequireAdmin from './Pages/Login/RequireAdmin';
+import RequireAdmin from './Authentication/RequireAdmin';
 
 function App() {
     return (

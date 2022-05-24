@@ -2,9 +2,9 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import axiosBicycle from '../../api/axiosBicycle';
-import Loading from '../../Components/Loading/Loading';
-import auth from '../../Firebase/firebase.init';
+import axiosBicycle from '../api/axiosBicycle';
+import Loading from '../Components/Loading/Loading';
+import auth from '../Firebase/firebase.init';
 
 const RequireAdmin = ({ children }) => {
     const [user, loading] = useAuthState(auth);
