@@ -14,7 +14,7 @@ const LatestParts = () => {
 
     return (
         <div className='container mx-auto text-center mb-6'>
-            <h2 className='text-4xl font-bold uppercase text-primary mb-6'>Our Latest Collection</h2>
+            <h2 className='text-5xl uppercase text-primary mb-6'>Our Latest Collection</h2>
             <div className="grid gap-y-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center mb-8">
                 {
                     parts.map(part => <SingleParts key={part._id} part={part} />)

@@ -26,14 +26,16 @@ const Dashboard = () => {
                     <ul className="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link className={location.pathname === '/dashboard' ? 'active' : undefined} to="/dashboard">My Profile</Link></li>
-                        <li><NavLink to="/dashboard/my-orders">My Orders</NavLink></li>
-                        <li><NavLink to="/dashboard/add-review">Add Review</NavLink></li>
                         {
-                            admin && <>
+                            admin ? <>
                                 <li><NavLink to="/dashboard/users">All User</NavLink></li>
                                 <li><NavLink to="/dashboard/add-product">Add Product</NavLink></li>
                                 <li><NavLink to="/dashboard/manage">Manage Product</NavLink></li>
-                            </>
+                            </> :
+                                <>
+                                    <li><NavLink to="/dashboard/my-orders">My Orders</NavLink></li>
+                                    <li><NavLink to="/dashboard/add-review">Add Review</NavLink></li>
+                                </>
                         }
                     </ul>
 
