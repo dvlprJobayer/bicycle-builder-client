@@ -14,6 +14,7 @@ import AddProduct from './Pages/Dashboard/Admin/AddProduct';
 import ManageProduct from './Pages/Dashboard/Admin/ManageProduct';
 import RequireUser from './Authentication/RequireUser';
 import AddReview from './Pages/Dashboard/User/AddReview';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                 {
                     PublicRoutes.map(({ path, Component }, index) => <Route key={index} path={path} element={<Component />} />)
                 }
+                <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>} />
                 <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
                     <Route index element={<RequireAuth><MyProfile /></RequireAuth>} />
                     <Route path='add-review' element={<RequireUser><AddReview /></RequireUser>} />

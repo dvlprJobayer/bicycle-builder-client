@@ -25,7 +25,7 @@ const SingleReview = ({ review }) => {
                 <p>{review.reviewText}</p>
                 <p className='flex mt-1'>
                     {
-                        star.map(s => <BsFillStarFill className='mr-2 text-yellow-500' />)
+                        star.map(s => <BsFillStarFill key={s} className='mr-2 text-yellow-500' />)
                     }
                 </p>
             </div>

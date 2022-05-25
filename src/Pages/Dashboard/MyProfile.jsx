@@ -33,6 +33,8 @@ const MyProfile = () => {
         const name = data.name;
         const address = data.address;
         const phone = data.phone;
+        const education = data.education;
+        const linkedin = data.linkedin;
         const formData = new FormData();
         formData.append('image', data.userImg[0]);
         fetch(url, {
@@ -45,6 +47,8 @@ const MyProfile = () => {
                     name,
                     address,
                     phone,
+                    education,
+                    linkedin,
                     img
                 }).then(res => {
                     setLoading(false);
@@ -73,16 +77,20 @@ const MyProfile = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="card-body">
                             <h2 className="card-title">Name:</h2>
-                            <input placeholder='Your Name' type="text" {...register("name")} defaultValue={profile?.data?.name} className="input input-bordered text-lg font-semibold w-full max-w-md" disabled={profile?.data?.name} />
+                            <input placeholder='Your Name' type="text" {...register("name")} defaultValue={profile?.data?.name} className="input input-bordered text-lg font-semibold w-full max-w-md" />
                             <h2 className="card-title">Email:</h2>
                             <input type="email" value={user?.email} className="input input-bordered text-lg font-semibold w-full max-w-md" disabled />
                             <h2 className="card-title">Address:</h2>
-                            <input defaultValue={profile?.data?.address} type="text" {...register("address")} placeholder="Your Address" className="input input-bordered text-lg font-semibold w-full max-w-md" disabled={profile?.data?.address} />
+                            <input defaultValue={profile?.data?.address} type="text" {...register("address")} placeholder="Your Address" className="input input-bordered text-lg font-semibold w-full max-w-md" />
                             <h2 className="card-title">Phone Number:</h2>
-                            <input defaultValue={profile?.data?.phone} type="text" {...register("phone")} placeholder="Your Phone Number" className="input input-bordered text-lg font-semibold w-full max-w-md" disabled={profile?.data?.phone} />
+                            <input defaultValue={profile?.data?.phone} type="text" {...register("phone")} placeholder="Your Phone Number" className="input input-bordered text-lg font-semibold w-full max-w-md" />
+                            <h2 className="card-title">Education:</h2>
+                            <input defaultValue={profile?.data?.education} type="text" {...register("education")} placeholder="Your Education" className="input input-bordered text-lg font-semibold w-full max-w-md" />
+                            <h2 className="card-title">Your Linkedin Profile:</h2>
+                            <input defaultValue={profile?.data?.linkedin} type="text" {...register("linkedin")} placeholder="Your Linkedin Profile" className="input input-bordered text-lg font-semibold w-full max-w-md" />
                             <h2 className="card-title">Upload Image:</h2>
-                            <input type="file" {...register("userImg")} className="input input-bordered text-lg font-semibold w-full max-w-md" disabled={profile?.data?.img} />
-                            <input type="submit" className='btn btn-primary w-full mt-3' value="Update Profile" disabled={profile?.data?.phone && profile?.data?.address && profile?.data?.img && profile?.data?.name} />
+                            <input type="file" {...register("userImg")} className="input input-bordered text-lg font-semibold w-full max-w-md" />
+                            <input type="submit" className='btn btn-primary w-full mt-3' value="Update Profile" />
                         </div>
                     </form>
                 </div>
