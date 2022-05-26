@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axiosBicycle from '../../../api/axiosBicycle';
 import Loading from '../../../Components/Loading/Loading';
@@ -29,7 +29,7 @@ const MyOrder = () => {
             refetch();
             toast.success('Successfully Cancel the order');
         }).catch(err => {
-            if (error?.response?.status === 403 || error?.response?.status === 401) {
+            if (err?.response?.status === 403 || err?.response?.status === 401) {
                 signOut(auth);
                 <Navigate to="/login" state={{ from: location }} replace />;
             }
@@ -64,7 +64,7 @@ const MyOrder = () => {
                                 <td>{order.status}</td>
                                 <td>
                                     {
-                                        order.status === 'unpaid' && <button className='btn btn-success text-white'>Pay</button>
+                                        order.status === 'unpaid' && <Link to={`/dashboard/payment/${order._id}`} className='btn btn-success text-white'>Pay</Link>
                                     }
                                 </td>
                                 <td>

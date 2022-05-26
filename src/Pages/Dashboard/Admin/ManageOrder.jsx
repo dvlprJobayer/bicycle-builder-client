@@ -25,7 +25,7 @@ const ManageOrder = () => {
             refetch();
             toast.success('Successfully Cancel the order');
         }).catch(err => {
-            if (error?.response?.status === 403 || error?.response?.status === 401) {
+            if (err?.response?.status === 403 || err?.response?.status === 401) {
                 signOut(auth);
                 <Navigate to="/login" state={{ from: location }} replace />;
             }
