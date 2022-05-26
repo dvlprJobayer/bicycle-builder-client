@@ -30,6 +30,7 @@ const OrderModal = ({ order, setOrder, refetch }) => {
             quantity: data.quantity,
             price: totalPrice,
             pdId: order._id,
+            img: order.img,
             status: 'unpaid'
         }).then(res => {
             toast.success('Successfully order complete');
