@@ -72,8 +72,8 @@ const MyProfile = () => {
     return (
         <div className='ml-2'>
             <h1 className='text-4xl text-center text-primary mb-6 font-semibold'>My Profile</h1>
-            <div className='grid grid-cols-1 lg:grid-cols-2'>
-                <div className="card max-w-md bg-base-100 shadow-xl">
+            <div className='grid grid-cols-1 md:grid-cols-2'>
+                <div className="card max-w-md bg-base-100 shadow-xl mx-auto lg:mx-0 md:mb-8">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="card-body">
                             <h2 className="card-title">Name:</h2>
@@ -94,9 +94,9 @@ const MyProfile = () => {
                         </div>
                     </form>
                 </div>
-                <div className='h-64 w-64 bg-base-300 rounded-full flex items-center justify-center'>
+                <div className='h-64 w-64 bg-base-300 rounded-full flex items-center justify-center my-8 md:mx-8 mx-auto'>
                     {
-                        profile?.data?.address ?
+                        profile?.data?.img ?
                             <img src={profile?.data?.img} className="rounded-full h-64 w-64 object-contain" alt="USER" /> :
                             <h3 className='text-4xl font-bold'>USER</h3>
                     }

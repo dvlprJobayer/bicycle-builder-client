@@ -18,6 +18,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import MyOrder from './Pages/Dashboard/User/MyOrder';
 import ManageOrder from './Pages/Dashboard/Admin/ManageOrder';
 import Payment from './Pages/Dashboard/User/Payment';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                     <Route path='manage' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />
                     <Route path='manage-order' element={<RequireAdmin><ManageOrder /></RequireAdmin>} />
                 </Route>
+                <Route path='*' element={<NotFound />} />
             </Routes>
             <Footer />
             <ToastContainer />
