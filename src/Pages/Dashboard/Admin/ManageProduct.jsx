@@ -34,7 +34,7 @@ const ManageProduct = () => {
     }
 
     return (
-        <div>
+        <>
             <div className="overflow-x-auto">
                 <table className="table w-full text-center">
                     <thead>
@@ -57,7 +57,7 @@ const ManageProduct = () => {
                                 <td>{product.min}</td>
                                 <td>{product.available}</td>
                                 <td>${product.price}</td>
-                                <td><label for="delete-product-modal" onClick={() => setId(product._id)} className='btn btn-error text-white'><BsFillTrashFill className='text-2xl' /></label></td>
+                                <td><label htmlFor="delete-product-modal" onClick={() => setId(product._id)} className='btn btn-error text-white'><BsFillTrashFill className='text-2xl' /></label></td>
                             </tr>)
                         }
                     </tbody>
@@ -75,7 +75,7 @@ const ManageProduct = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

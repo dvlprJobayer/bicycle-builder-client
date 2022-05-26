@@ -52,7 +52,7 @@ const ManageOrder = () => {
     }
 
     return (
-        <div>
+        <>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -99,7 +99,7 @@ const ManageOrder = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

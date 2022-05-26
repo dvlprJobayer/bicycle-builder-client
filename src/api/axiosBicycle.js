@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosBicycle = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://pure-mesa-49301.herokuapp.com'
 });
 
 // Add a request interceptor

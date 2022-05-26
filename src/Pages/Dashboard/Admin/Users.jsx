@@ -45,7 +45,7 @@ const Users = () => {
     }
 
     return (
-        <div className='mx-4'>
+        <>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -84,7 +84,7 @@ const Users = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
