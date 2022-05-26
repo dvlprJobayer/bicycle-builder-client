@@ -33,6 +33,20 @@ const ManageOrder = () => {
         })
     }
 
+    const shippedOrder = id => {
+        axiosBicycle.patch(`/order/${id}`, {
+            status: 'shipped'
+        }).then(res => {
+            refetch();
+            toast.success('Successfully shipped order');
+        }).catch(err => {
+            if (err?.response?.status === 403 || err?.response?.status === 401) {
+                signOut(auth);
+                <Navigate to="/login" state={{ from: location }} replace />;
+            }
+        })
+    }
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -67,7 +81,7 @@ const ManageOrder = () => {
                                 <td>${order.price}</td>
                                 <td>{order.status}</td>
                                 <td>{order.status === 'unpaid' && <label htmlFor="admin-cancel-order" onClick={() => setId(order._id)} className='btn btn-error text-white btn-xs'>Cancel</label>}</td>
-                                <td>{order.status === 'pending' && <button className='btn btn-success text-white btn-xs'>Shipped</button>}</td>
+                                <td>{order.status === 'pending' && <button onClick={() => shippedOrder(order._id)} className='btn btn-success text-white btn-xs'>Shipped</button>}</td>
                             </tr>)
                         }
                     </tbody>

@@ -77,13 +77,13 @@ const CheckoutForm = ({ order }) => {
             toast.success('Payment is Completed');
             setTransactionId(paymentIntent.id);
             axiosBicycle.patch(`/order/${_id}`, {
+                status: 'pending',
                 transactionId: paymentIntent.id
             }).then(res => console.log(res.data)).catch(err => {
                 if (err?.response?.status === 403 || err?.response?.status === 401) {
                     signOut(auth);
                     <Navigate to="/login" state={{ from: location }} replace />;
                 }
-                console.log(err);
             })
         }
 

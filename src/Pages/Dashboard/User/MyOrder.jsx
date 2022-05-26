@@ -50,7 +50,7 @@ const MyOrder = () => {
                             <th>Amount</th>
                             <th>Status</th>
                             <th></th>
-                            <th></th>
+                            <th>Transaction Id</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,14 +64,21 @@ const MyOrder = () => {
                                 <td>{order.status}</td>
                                 <td>
                                     {
-                                        order.status === 'unpaid' && <Link to={`/dashboard/payment/${order._id}`} className='btn btn-success text-white'>Pay</Link>
+                                        order.status === 'unpaid' ? <Link to={`/dashboard/payment/${order._id}`} className='btn btn-success text-white'>Pay</Link> : <p className='text-success font-semibold text-lg'>Paid</p>
                                     }
                                 </td>
-                                <td>
-                                    {
-                                        order.status === 'unpaid' && <label htmlFor="cancel-order-modal" onClick={() => setId(order._id)} className='btn btn-error text-white'>Cancel</label>
-                                    }
-                                </td>
+                                {
+                                    order.status === 'unpaid' && <td>
+                                        <label htmlFor="cancel-order-modal" onClick={() => setId(order._id)} className='btn btn-error text-white'>Cancel</label>
+                                    </td>
+                                }
+                                {
+                                    order.status !== 'unpaid' && <td className='text-success font-semibold text-lg'>
+                                        {
+                                            order.transactionId
+                                        }
+                                    </td>
+                                }
                             </tr>)
                         }
                     </tbody>
