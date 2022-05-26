@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Project Name: Bicycle Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description: 
+Bicycle Builder is a manufacturer website. This website has firebase authentication system. Private route, nested route. This website also has payment integration system. user can order a quantity of product. if user not paid for the product user can cancel this product. user can payment for the product. if user pay any order product user can not cancel paid product. user can update profile from my profile page. This website also has admin route only admin can access this particular route. Admin can add product. Admin can cancel any user order which is not paid yet. Admin can delete any product.
 
-## Available Scripts
+## Live Project: [https://bicycle-builder.web.app/](https://bicycle-builder.web.app/).
 
-In the project directory, you can run:
+## Project features and functionality:
 
-### `npm start`
+* The website has several route some of route like (Home, Dashboard, Login, My orders, Blogs, Mange orders, Add product and My Profile).
+* Default Dashboard route will hide. When user login or sign up user can see dashboard.
+* If a user login or sign up server will create a jwt token and set up user browser's local storage after that when user login and go to my-orders route verify the user in server with jwt token.
+* If a user login or sign up user can see dashboard menu My profile, My orders and Add review.
+* This Website has admin functionality. When an admin login or sign up admin will not see user route except my profile admin will see manage orders, Add product, Manage Product and all user.
+* Admin can make admin any user.
+* Admin also delete any product or add any product.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The technology used in the project is mentioned below:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React
+* React Router
+* React firebase hooks
+* Firebase
+* Tailwind CSS
+* Daisyui tailwind component library
+* React Icons
+* React toastify
+* json web token
+* express
+* mongodb
