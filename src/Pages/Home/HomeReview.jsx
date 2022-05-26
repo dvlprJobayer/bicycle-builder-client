@@ -11,7 +11,7 @@ const HomeReview = () => {
 
     return (
         <div className='container mx-auto text-center'>
-            <h2 className='text-5xl uppercase text-primary my-6'>Customer Reviews</h2>
+            <h2 className='text-5xl text-primary my-6'>Customer Reviews</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-y-6 mb-8">
                 {
                     reviews.map(review => <SingleReview key={review._id} review={review} />)

@@ -20,7 +20,7 @@ const BusinessSummary = () => {
                 </div>
                 <div className='flex flex-col items-center'>
                     <p><BsTools className='text-6xl text-primary' /></p>
-                    <h3 className='text-5xl font-semibold mt-5'>50<span>+</span></h3>
+                    <h3 className='text-5xl font-semibold mt-6'>50<span>+</span></h3>
                     <p className='text-lg mt-2 font-semibold text-primary'>Tools</p>
                 </div>
             </div>

@@ -3,6 +3,8 @@ import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import HomeReview from './HomeReview';
 import LatestParts from './LatestParts';
+import Newsletter from './Newsletter';
+import OurPartners from './OurPartners';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             <LatestParts />
             <HomeReview />
             <BusinessSummary />
+            <OurPartners />
+            <Newsletter />
         </>
     );
 };
