@@ -15,7 +15,7 @@ const SocialLogin = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    const [token] = useToken(user);
+    const [token, tokenLoading] = useToken(user);
 
     if (user) {
         axiosBicycle.put(`/user?email=${user.user.email}`, {
@@ -31,8 +31,8 @@ const SocialLogin = () => {
         }
     }, [token, navigate, from]);
 
-    if (loading) {
-        return <div className='min-h-screen'>
+    if (loading || tokenLoading) {
+        return <div className="min-h-screen">
             <Loading></Loading>
         </div>
     }

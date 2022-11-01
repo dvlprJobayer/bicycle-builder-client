@@ -36,7 +36,7 @@ const SignUp = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    const [token] = useToken(user);
+    const [token, tokenLoading] = useToken(user);
 
     useEffect(() => {
         if (token) {
@@ -44,7 +44,7 @@ const SignUp = () => {
         }
     }, [token, navigate, from]);
 
-    if (loading || updating) {
+    if (loading || updating || tokenLoading) {
         return <div className='min-h-screen'>
             <Loading></Loading>
         </div>
